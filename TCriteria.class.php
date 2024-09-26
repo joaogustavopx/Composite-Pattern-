@@ -61,17 +61,41 @@
       return "({$result})";
     }
   }
-  /* Metod SetPropriety
+  /* Metodo SetPropriety()
+  * define o valor de uma propriedade
+  * @param $property = propriedade
+  * @param $value = valor
+  */
+  public function setProperty($property,$value)
+    {
+      if(isset($value))
+      {
+        $this->properties[$property] = $value
+          }
+          else
+          {
+            $this->properties[$property] = NULL;
+          }
+        }
+
+  /* Metodo getProperty()
+  * retorna o valor da propriedade
+  * @param $property = propriedade
+  */
+
+        public function getProperty($property)
+        {
+          if(isset($this->properties[$property]))
+          {
+            return $this->properties[$property];
+          }
+        }
+      }
+    
+      ?>
 
 
 
 
       
 
-    }
-
-  }
-
-
-
-?>
