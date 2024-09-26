@@ -24,7 +24,8 @@
     * @param $operator = operador lógico de comparação
     */
 
-    public function add(TExpression $expression, $operator = self::AND_OPERATOR){
+    public function add(TExpression $expression, $operator = self::AND_OPERATOR)
+    {
       // na primeira vez, não precisamos de operador lógico para concatenar
 
       if(empty($this->expressions))
@@ -46,21 +47,24 @@
     public function dump()
     {
       // concatena a lista de expressoes
-
-      if(count($this->expressions)>0)
+      if(is_array($this->expressions))
       {
-      $result = '';
-      foreach($this->expressions as  $i=> $expression)
-      {
-        $operator = $this->operators[$i];
-        // concatena o operador com a respectiva expressão
-        $result .= $operator. $expression->dump().' ';
-      }
+        if(count($this->expressions)>0)
+          {
+            $result = '';
+            foreach($this->expressions as  $i=> $expression)
+             {
+                $operator = $this->operators[$i];
+                // concatena o operador com a respectiva expressão
+                $result .= $operator. $expression->dump().' ';
+              }
 
-      $result = trim($result);
-      return "({$result})";
+              $result = trim($result);
+              return "({$result})";
     }
   }
+}
+
   /* Metodo SetPropriety()
   * define o valor de uma propriedade
   * @param $property = propriedade
@@ -70,27 +74,27 @@
     {
       if(isset($value))
       {
-        $this->properties[$property] = $value
-          }
-          else
-          {
-            $this->properties[$property] = NULL;
-          }
-        }
+        $this->properties[$property] = $value;
+      }
+      else
+      {
+        $this->properties[$property] = NULL;
+      }
+    }
 
   /* Metodo getProperty()
   * retorna o valor da propriedade
   * @param $property = propriedade
   */
 
-        public function getProperty($property)
-        {
-          if(isset($this->properties[$property]))
-          {
+    public function getProperty($property)
+    {
+      if(isset($this->properties[$property]))
+      {
             return $this->properties[$property];
-          }
-        }
       }
+    }
+  }
     
       ?>
 

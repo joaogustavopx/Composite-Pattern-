@@ -20,8 +20,8 @@ echo "<br>\n";
 // a idade deve estar dentro do conjunto (24,25,26) e deve estar fora do conjunto (10)
 
 $criteria = new TCriteria;
-$criteria->add(new TFilter("idade","IN",array(24,25,26)));
-$criteria->add(new TFilter("idade","NOT IN",array(10)));
+$criteria->add(new TFilter("idade","IN", array(24,25,26)));
+$criteria->add(new TFilter("idade","NOT IN", array(10)));
 echo $criteria->dump();
 echo "<br>\n";
 
@@ -38,8 +38,8 @@ echo "<br>\n";
 // e o genero deve ser Feminino (sexo = 'F')
 
 $criteria = new TCriteria;
-$criteria->add(new TFilter("telefone","IS NOT",NULL));
-$criteria->add(new TFilter("sexo","=",'F'));
+$criteria->add(new TFilter('telefone','IS NOT',NULL));
+$criteria->add(new TFilter('sexo','=','F'));
 echo $criteria->dump();
 echo "<br>\n";
 
