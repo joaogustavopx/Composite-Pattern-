@@ -18,7 +18,7 @@ $sql->setEntity('aluno');
 // Inserindo os dados nas colunas da entidade 'aluno'
 $sql->setRowData('id', 3);
 $sql->setRowData('nome', 'Pedro Cardoso');
-$sql->setRowData('fone', '(88) 4444-7777');
+$sql->setRowData('fone', '(51) 4002-8922');
 $sql->setRowData('nascimento', '1985-04-12');
 $sql->setRowData('sexo', 'M');
 $sql->setRowData('serie', '4');
